@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NisanAspNetMVCEgitimi", "NisanAspNetMVCEgitimi\NisanAspNetMVCEgitimi.csproj", "{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetFrameworkMVC", "AspNetFrameworkMVC\AspNetFrameworkMVC.csproj", "{58390FF2-5DEE-4562-BE09-1F34FB603F53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {560F5F10-EEEF-468F-BC0C-A5CE89324605}
+	EndGlobalSection
+EndGlobal
