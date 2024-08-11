@@ -1,0 +1,517 @@
+﻿@{
+    ViewData["Title"] = "Ders12 Ornek Tasarim";
+    //Layout = "~/Views/Shared/_Layout2.cshtml"; // eğer özel layout kullanmak istersek
+    Layout = null; // eğer sayfada layout kullanmayacaksak.
+}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap ile Örnek Sayfa Tasarımı</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link type="image/x-icon" rel="icon" href="/Images/favicon.ico">
+    <style>
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: .75rem;
+        }
+
+        .icon-square {
+            width: 3rem;
+            height: 3rem;
+            border-radius: .75rem;
+        }
+
+        .text-shadow-1 {
+            text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+        }
+
+        .text-shadow-2 {
+            text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+        }
+
+        .text-shadow-3 {
+            text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+        }
+
+        .card-cover {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .feature-icon-small {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        #neden {
+            background-color: #27354f;
+            padding: 5rem 0;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/Ders12OrnekTasarim.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="/Images/logoInfotechAcademy.png" alt="logoInfotechAcademy" class="img-fluid">
+                </a>
+            </div>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 link-dark">Anasayfa</a></li>
+                <li class="vr"></li>
+                <li><a href="hakkimizda.html" class="nav-link px-2 link-dark">Hakkımızda</a></li>
+                <li class="vr"></li>
+                <li>
+                    <div class="dropdown">
+                        <a class="nav-link px-2 link-dark btn dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Eğitimlerimiz
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Yazılım Uzmanlığı Eğitimi (MCSD)</a></li>
+                            <li><a class="dropdown-item" href="#">Mobil Oyun Geliştirme (Unity) Eğitimi</a></li>
+                            <li><a class="dropdown-item" href="#">Sistem Uzmanlığı Eğitimi (MCSE)</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="vr"></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Eğitim Takvimi</a></li>
+                <li class="vr"></li>
+                <li><a href="iletisim.html" class="nav-link px-2 link-dark">İletişim</a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <a href="/BootstrapEgitimi/sign-in.html" class="btn btn-outline-primary me-2" target="_blank">
+                    Giriş
+                    Yap
+                </a>
+                <button type="button" class="btn btn-primary">Üye Ol</button>
+            </div>
+        </header>
+    </div>
+    <!-- header kodları bitiş -->
+    <!-- slider başlangıç -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/Images/2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Python İle Veri Bilimi ve ChatGPT Projeleri Geliştirme Eğitimi</h5>
+                    <p>
+                        Bu eğitimimizde sıfırdan python programlama dilini öğrenip sonrasında yapay zeka, makine
+                        öğrenmesi gibi veri bilimi
+                        konularına geçip, uygulama tarafında ise ChatGPT ile Sesli Asistan, Web Clone vb. projeler
+                        gerçekleştirmiş olacağız.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/Images/chatgpt-python-egitimi-infotech8.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Proje Geliştirme Eğitimlerimiz Başladı</h5>
+                    <p>
+                        Bu eğitimlerimizde, sıfırdan bir web projesini, best-practice yönemler ile .net core mvc alt
+                        yapısında nasıl
+                        geliştirebileceğinizi öğrenmiş olacaksınız, aynı zamanda kariyer noktasında da, CV'nizde Proje
+                        Geliştirme veya Tecrübe
+                        alanında yer alması açısından sizlere faydalı olacaktır.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/Images/e-ticaret-proje-gelistirme-egitimi-infotech-academy12.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Kariyerinize Bilişim Uzmanı Olarak Yön Verin!</h5>
+                    <p>
+                        Bilişim sektöründe yer almak için Bilgisayar Mühendisi olmanız şart değil. Eğitim içeriklerimiz
+                        en temelden, ileri
+                        seviyeye kadar detaylı ve uygulamaya yönelik olarak hazırlanmıştır.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- slider bitiş -->
+    <!-- kart başlangıç -->
+    <div id="kart" class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-1.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">BİREYSEL EĞİTİMLER</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <a href="#" class="btn btn-light">Detaylı Bilgi</a>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>3d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-2.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">KURUMSAL EĞİTİMLER</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <a href="#" class="btn btn-light">Detaylı Bilgi</a>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>4d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-3.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">PROJE GELİŞTİRME ve DANIŞMANLIK</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <a href="#" class="btn btn-light">Detaylı Bilgi</a>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>5d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kart bitiş -->
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="text-center">
+                <h1>EĞİTİM PROGRAMLARIMIZ</h1>
+                <p class="col-md-7 m-auto pb-5">
+                    Bilişim ve Eğitim sektöründeki köklü geçmişimiz, kurslarını başarıyla
+                    tamamlamış yüzlerce öğrenci ve
+                    danışmanlık
+                    hizmeti sunduğumuz, onlarca kurumsal firma ile eğitim kalitemizi arttırmaya devam ediyoruz.
+                </p>
+            </div>
+            <div class="owl-carousel">
+                <div class="item">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="/Images/react_native_kursu_egitimi_infotechacademy25.png" alt="">
+                        <div class="card-body">
+                            <h5>React Native Kursu-Eğitimi İle Mobil Uygulama Geliştirme</h5>
+                            <p class="card-text">
+                                React Native Kursu-Eğitimi İle Mobil Uygulama Geliştirmeyi öğrenerek kariyerinizi mobil
+                                uygulama alanında ilerletebilirsiniz
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="/Images/net-core-eticaret-gelistirme-egitimi29.png" alt="">
+                        <div class="card-body">
+                            <h5>Mikroservis İle E-Ticaret Projesi Geliştirme Eğitimi</h5>
+                            <p class="card-text">
+                                Bu eğitimde, sıfırdan bir e-ticaret projesini, best-practice yönemler ile .net core mvc
+                                alt yapısında nasıl
+                                geliştirebileceğinizi öğrenmiş olacaksınız
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="/Images/aspnetcoemvc16.png" alt="">
+                        <div class="card-body">
+                            <h5>Kurumsal Asp .Net Core Mvc Web Tasarım/Yazılım Eğitimleri</h5>
+                            <p class="card-text">
+                                Günümüzde en çok talep edilen programlama frameworklerden birisi olan
+                                .NET Core kütüphanesi, birçok projeyi başarılı bir
+                                şekilde geliştirmeyi sağlar.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-body-secondary">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- eğitim programları bitiş -->
+
+    <div id="neden">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 offset-md-1">
+                    <img src="/Images/bgVideo.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-5 text-white">
+                    <h3>Neden Infotech Academy?</h3>
+                    <h2>BİLİŞİM EĞİTİMLERİNİN DOĞRU ADRESİ</h2>
+                    <p>
+                        İş hayatında aktif olarak kullanılan yazılım araçları ve teknolojiler üzerine eğitimler sunan
+                        Infotech Academy, sadece teorik değil uygulamaya yönelik güncel eğitimler vermektedir. Ayrıca
+                        öğrenci, yeni mezun ve kariyerini geliştirmek isteyen personellerin en çok ihtiyaç duyduğu bazı
+                        sosyal meslek eğitimlerini de gerçekleştiren Infotech Academy, uygulama yönü ile
+                        farklılaşmıştır.
+                    </p>
+                    <a href="/kurumsal" class="btn btn-danger">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- neden bitti -->
+    <div class="container col-xl-12 col-xxl-10 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-5 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Neden Infotech Akademi?</h1>
+                <p class="col-lg-10 fs-4">
+                    Avantajlı eğitim firsatlarından faydalanmak için
+                    hemen iletişime geçin.
+                </p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-7">
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Adınız Soyadınız">
+                                <label for="floatingInput">Adınız Soyadınız</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="İrtibat Numaranız" maxlength="11">
+                                <label for="floatingPassword">İrtibat Numaranız</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="Mail Adresiniz">
+                                <label for="floatingInput">Mail Adresiniz</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Almak İstediğiniz Eğitim">
+                                <label for="floatingPassword">Almak İstediğiniz Eğitim</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <textarea name="txtMesaj" id="txtMesaj" class="form-control" placeholder="Mesajınız" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-success mt-3" type="submit">
+                        Mesajı Gönder <i class="bi bi-send"></i>
+                    </button>
+                    <hr class="my-4">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- mesaj gönder bitiş -->
+    <div class="container">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>BİZE ULAŞIN</h5>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <i class="bi bi-geo-alt"></i>
+                            Kadıköy Şube: Osmanağa Mah. Söğütlü Çeşme Cd. No:31 Kadıköy/İstanbul
+                            <br><br>
+                            Şişli Şube: Büyükdere Cad. Mecidiyeköy Mah. No:
+                            65/3 Şişli / İstanbul
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="mailto:info@infotechacademy.com.tr" class="nav-link p-0 text-body-secondary">
+                                <i class="bi bi-envelope"></i> info@infotechacademy.com.tr
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="tel:+902129092189" class="nav-link p-0 text-body-secondary">
+                                <i class="bi bi-telephone"></i>
+                                +90 212 909 21 89
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>ÖNE ÇIKAN EĞİTİMLER</h5>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">
+                                Yazılım Uzmanlığı
+                                Eğitimi (MCSD)
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">
+                                Python İle Veri
+                                Bilimi ve Yapay Zeka Eğitimi
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">
+                                Mobil Oyun
+                                Geliştirme (Unity) Eğitimi
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">
+                                Flutter
+                                Kursu-Eğitimi ile Mobil Uygulama Geliştirme
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">
+                                Sistem Uzmanlığı
+                                Eğitimi (MCSE)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>E BÜLTENE ABONE OLUN</h5>
+                        <hr>
+                        <p>En yeni eğitim bildirimlerini ilk siz alın.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email">
+                            <button class="btn btn-primary" type="button" style="width: 118px;">Abone Ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2024 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="#">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <!-- footer bitiş -->
+
+    <script src="/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        // js kodları buraya
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [1000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
+    </script>
+
+
+</body>
+</html>

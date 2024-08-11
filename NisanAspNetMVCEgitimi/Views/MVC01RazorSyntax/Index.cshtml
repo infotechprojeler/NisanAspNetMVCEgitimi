@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "MVC Razor Syntax";
+
+    string adi = "Ali";
+    string[] isimler = { "Nisa", "Mesut", "Mert", "Batuflex", "Hareketin Lideri" };
+    string urunadi = "Bilgisayar";
+    decimal fiyat = 18000;
+    decimal kdv = 1.20M;
+    var tarih = DateTime.Now; // sistem tarihini al
+}
+
+<h2>MVC Razor Syntax</h2>
+
+<h3>Title(Sekme Başlığı) : @ViewBag.Title</h3>
+
+<p class="alert alert-success">
+    MVC de cshtml dosyalarında c# ve html kodlarını karışık yazabiliyoruz.
+    Tanımladığımız c# değişkenlerine ait değerleri ekranda göstermek için at ile koda başlıyoruz.
+</p>
+

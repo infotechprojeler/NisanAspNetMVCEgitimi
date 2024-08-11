@@ -12,5 +12,9 @@ namespace NisanAspNetMVCEgitimi.Controllers
         {
             return View(); // Burada Views Altında Hakkimizda adında bir view bekler
         }
+        public IActionResult Ders12OrnekTasarim()
+        {
+            return View();
+        }
     }
 }

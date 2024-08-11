@@ -7,10 +7,95 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<h3>Bir Controller da varsayılan sayfa Index dir</h3>
+<p>
+    M : Models = Veritabanıyla çalışan uygulamalar yaptığımızda kullandığımız Ürün,Kategori,Marka vb gibi class dosyalarımızı eklediğimiz klasördür.
+</p>
 
 <p>
-    Dolayısıyla Sadece Home yazarsak Mvc varsayılan olarak Index isimli action ı çalıştırır.
+    V : Views = Web uygulamalarının ekranları Views klasörü altında bulunur.
+</p>
+
+<p>
+    C: Controllers = Uygulamamıza gelen sayfa açma isteklerini karşılayıp ilgili ekran varsa kullanıcıya gösteren, veritabanı kullanan uygulamalarda backend işlemlerini yapabilen sınıfıların olduğu klasördür.
+</p>
+
+<p>
+    Yeni bir MVC projesi oluşturduğumuzda 1 Home controller oluşur.
+</p>
+
+<h3>Bir Controller da varsayılan sayfa Index dir</h3>
+
+<h2>Projeye Yeni Controller Ekleme</h2>
+
+<p>
+    Projedeki Controllers klasörüne sağ tık > add > controller > Empty > Add menüsünden vereceğimiz isimle yeni bir controller ekleyebiliriz.
+</p>
+
+<p class="alert alert-danger">
+    Dikkat! Yeni controller eklerken controller adının sonunda mutlaka controller yazmalıdır yoksa Mvc açamaz!
+    <br />
+    Örnek: UrunlerimizController.cs şeklinde olmalıdır isim.
+</p>
+
+<h2>Projeye View Ekleme</h2>
+
+<p>
+    Controller ı oluşturduktan sonra aynı isimle Views klasöründe 1 klasör oluşturmamız gerekmekte. Bunu manuel de ekleyebiliriz visual studio da controller içindeki action metoduna sağ tıklayıp add view diyerek de oluşturmasını sağlayabiliriz. 
+</p>
+
+<div>
+    Örnek: Controllers a AnasayfaController eklediysek views klasöründe Anasayfa Adında 1 klasör olmalı. Bu klasöre sağ tıklayıp add view diyerek Index.cshtml dosya adıyla ekleyeceğimiz dosya içerisine yazdığımız içerikler uygulamayı çalıştırdıktan sonra tarayıcı adres çubuğuna localhost.../Anasayfa şeklinde yazdığımızda gösterilecektir.
+</div>
+
+<p>
+     Sadece Home yazarsak Mvc varsayılan olarak Index isimli action ı çalıştırır.
     <br />
     O da ekrana Index.cshtml dosyasını getirir.
 </p>
+
+<h3>Üst Menüyü Değiştirme</h3>
+
+<p>
+    Projedeki Views klasörünü genişletip altındaki Shared klasöründe yer alana _Layout.cshtml dosyasını açıyoruz.
+    <br />
+    Bu dosya views altındaki tüm sayfaları içinde çalıştıran ana şablonu barındırır.
+    <br />
+    Üst menüyü değiştirmek için ekranda gördüğümüz menü yazılarının olduğu kodları bulup istediğimiz şekilde değiştirip kaydetmemiz gerekir.
+</p>
+
+<h3>_Layout Daki RenderBody() Metodu</h3>
+
+<p>
+    Views klasörü altındaki anasayfa, hakkimizda vb tüm cshtml uzantılı sayfalar bu metodun içinde çalıştırılır.
+    Layout içinde yer almak zorundadır. Silinirse sayfalar çalışmaz.
+</p>
+
+<h3>Shared Klasörü</h3>
+
+<div class="alert alert-success">
+    Tüm projenin ortak dosyaları bu klasörde tutulur. 
+    Layout dosyası ana şablondur.
+    Error sayfası uygulama hatalarını göstermek için kullanılan ortak sayfadır. 
+    Bu hata sayfasını istediğimiz gibi değiştirebiliriz.
+</div>
+
+<h3>Views > _ViewImports.cshtml Dosyası</h3>
+
+<div class="alert alert-info">
+    Bu dosya proje içinde kullanılacak olan ortak usinglerin tutulduğu dosyadır.
+    Bu dosya sayesinde yeni ekleyeceğimiz namespace leri her ekranda tekrar yazmaktan kurtuluruz.
+</div>
+
+<h3>Views > _ViewStart.cshtml Dosyası</h3>
+
+<div class="alert alert-secondary">
+    Bu dosya uygulamamız çalıştığında varsayılan Layout dosyasının yolunu tutar.
+    Buradaki layout bilgisini değiştirerek tüm uygulamanın kullandığı layout değiştirilerek tasarım değiştirilebilir.
+</div>
+
+<h3>Sayfada Resim Gösterme</h3>
+
+<div class="alert alert-info">
+    MVC de resim, css, js vb dosyalar statik dosya olarak kabul edilir ve bu dosyaların wwwroot klasöründe tutulması gerekir. Aksi taktirde farklı bir klasör eklenirse Mvc bu dosyayı görmez, görmesi için ekstra ayarlar yapılması gerekir o da uzun iş..
+</div>
+
