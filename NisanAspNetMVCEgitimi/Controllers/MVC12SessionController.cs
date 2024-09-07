@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NisanAspNetMVCEgitimi.Extensions;
 using NisanAspNetMVCEgitimi.Models; // UyeContext namespace
 
 namespace NisanAspNetMVCEgitimi.Controllers
@@ -25,6 +26,7 @@ namespace NisanAspNetMVCEgitimi.Controllers
                 HttpContext.Session.SetString("sifre", sifre);
                 HttpContext.Session.SetInt32("IsLoggedIn", 1);// sessionda SetInt32 metoduyla int tipinde veri saklayabiliriz.
                 HttpContext.Session.SetString("userguid", Guid.NewGuid().ToString());
+                HttpContext.Session.SetJson("uye", kullanici); // Kendi yazdığımız setJson metoduna çektiğimiz kullanıcıyı json olarak yükle
                 return RedirectToAction("SessionOku"); // işlem başarılıysa SessionOku sayfasına git
             }
             else

@@ -1,4 +1,4 @@
-﻿
+﻿@using NisanAspNetMVCEgitimi.Extensions;
 @{
     ViewData["Title"] = "Session Oku";
 }
@@ -12,6 +12,32 @@
     <h3>
         Guid: @Context.Session.GetString("userguid")
     </h3>
+    var uye = Context.Session.GetJson<Uye>("uye"); // Bizim yazdığımız getjson metoduna uye isimli sessiondaki json datasını Uye nesnesine çevirip getirmesini belirtiyoruz.
+    if (uye is not null)
+    {
+        <table class="table">
+            <tr>
+                <td>Ad Soyad</td>
+                <td>@uye.Ad @uye.Soyad</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@uye.Email</td>
+            </tr>
+            <tr>
+                <td>TC Kimlik No</td>
+                <td>@uye.TcKimlikNo</td>
+            </tr>
+            <tr>
+                <td>Telefon</td>
+                <td>@uye.Telefon</td>
+            </tr>
+            <tr>
+                <td>Doğum Tarihi</td>
+                <td>@uye.DogumTarihi</td>
+            </tr>
+        </table>
+    }
     <form asp-action="SessionSil">
         <input type="submit" value="Oturumu Kapat" class="btn btn-danger" />
     </form>
