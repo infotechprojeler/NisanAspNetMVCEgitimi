@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "MVC03 Data Transfer";
+}
+<h1>@ViewBag.Title</h1>
+
+<p>MVC de View ve Controller Arasında Veri Gönderme</p>
+
+<h3>@ViewBag.UrunKategorisi Ürünleri</h3>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Ürün Fiyatı</th>
+        <th>Stok</th>
+    </tr>
+    @foreach (var item in ViewData["Urunler"] as List<Urun>)
+    {
+        <tr>
+            <td>@item.Adi</td>
+            <td>@item.Fiyati ₺</td>
+            <td>@item.Stok</td>
+        </tr>
+    }    
+    <caption>
+        @TempData["UrunBilgi"]
+    </caption>
+</table>
+<p>
+    Yukardaki foreach yapısı : controller dan gönderilen ViewData["Urunler"] içerisindeki verinin tipinin List<Urun> (ürün listesi) olduğunu as ifadesi ile mvc ye belirtmiş oluyoruz.
+</p>
+
+<hr />
+
+<h1>MVC de View dan Controller a Veri Gönderme</h1>
+
+<h3>
+    1-Get Metoduyla Veri Gönderme
+</h3>
+
+<form asp-action="Index" method="get">
+    <input type="text" value="" name="txtAra" />
+    <button type="submit" class="btn btn-primary">Ara</button>
+</form>
+
+<p>
+    Bir formun metodunu get yapıp çalıştırırsak, form içindeki veriler QueryString denilen yöntemle Tarayıcı adres çubuğu üzerinden sunucuya gönderilir.
+    <hr />
+    Veriyi Viewdan GET metoduyla göndermişsek, Controller'da da GET metoduyla yakalayabiliriz!
+    <br />
+</p>
+
+<div class="alert alert-info">
+    @ViewBag.GetVerisi
+</div>
+
+<h3>
+    2-Post Metoduyla Veri Gönderme
+</h3>
+
+@{
+    SelectListItem[] liste = {
+       new SelectListItem() { Text = "Bilgisayar", Value = "1" },
+       new SelectListItem() { Text = "Monitör" },
+       new SelectListItem() { Text = "Telefon", Value = "3" },
+       new SelectListItem() { Text = "Televizyon" },
+       new SelectListItem() { Text = "Tablet", Value = "5" }
+    };
+}
+
+<form asp-action="Index" method="post">
+    @Html.TextBox("text1")
+    <hr />
+    @Html.DropDownList("ddlListe", liste)
+    <hr />
+    @Html.CheckBox("cbOnay") <label for="cbOnay">Onaylıyorum</label>
+    <hr />
+    <input type="submit" value="Gönder" />
+</form>
+
+<hr />
+
+<div class="alert alert-info">
+    <h4>@ViewBag.Baslik1</h4>
+    <br />
+    @ViewBag.Mesaj1
+    <br />
+    @ViewBag.Mesaj2
+    <br />
+    @ViewBag.Mesaj3
+</div>
+
+<hr />
+
+<div class="alert alert-warning">
+    <h4>@ViewBag.Baslik2</h4>
+    <br />
+    @ViewBag.Mesaj4
+    <br />
+    @ViewBag.Mesaj5
+    <br />
+    @ViewBag.Mesaj6
+</div>
+
+<hr />
+
+<div class="alert alert-primary">
+    <h4>@ViewBag.Baslik3</h4>
+    <br />
+    @ViewBag.Mesaj7
+    <br />
+    @ViewBag.Mesaj8
+    <br />
+    @ViewBag.Mesaj9
+</div>

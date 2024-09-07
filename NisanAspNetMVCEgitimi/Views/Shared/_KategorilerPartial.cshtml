@@ -1,0 +1,18 @@
+﻿
+@{
+    List<string> kategoriler = new List<string>()
+    {
+        "Bilgisayar", "Monitör", "Klavye", "Telefon", "Laptop"
+    };
+}
+
+<ul class="list-group">
+    @foreach (var kategori in kategoriler)
+    {
+        <li class="list-group-item">
+            <a href="/Home/Index?kategori=@kategori">
+                @kategori
+            </a>
+        </li>
+    }
+</ul>

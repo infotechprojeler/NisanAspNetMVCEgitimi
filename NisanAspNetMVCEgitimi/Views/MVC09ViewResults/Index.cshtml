@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Mvc View Result Çeşitleri";
+}
+
+<h2>Mvc View Result Çeşitleri</h2>
+
+<h4>Farklı View Döndürme</h4>
+
+<a asp-action="FarkliViewDondur">View Result</a>
+
+<h4>
+    Redirect Result : Sayfayı bir url adresine yönlendirme için kullanılır
+</h4>
+
+El Klasiko : @Html.ActionLink("Redirect Result", "Yonlendir")
+<br />
+Modern Warfire : <a asp-action="Yonlendir">Redirect Result</a>
+<br />
+<a href="/MVC09ViewResults/Yonlendir?kelime=telefon">Parametreli Redirect Result</a>
+
+<h4>
+    RedirectToAction Result : Sayfayı başka bir actiona yönlendirme için kullanılır
+</h4>
+
+@Html.ActionLink("RedirectToAction Result", "ActionaYonlendir")
+<br />
+<a asp-action="ActionaYonlendir">RedirectToAction Result</a>
+
+<h4>
+    RedirectToRouteResult Result : Sayfayı başka bir route a yönlendirme için kullanılır
+</h4>
+
+<a asp-action="RouteYonlendir">RedirectToRouteResult</a>
+
+<hr />
+
+<h4>
+    PartialViewResult : Actiona gelen istek sonucu geriye bir PartialView döndürmek için kullanılır
+</h4>
+
+<partial name="_KategorilerPartial" />
+
+<hr />
+
+<a asp-action="KategorileriGetirPartial">Kategorileri Getir Partial</a>
+
+<hr />
+
+<h4>
+    JsonResult : controller daki bir actiona gelen istek sonucu geriye json türünde veri döndürebiliriz.
+</h4>
+
+<a asp-action="JsonDondur">JsonResult</a>
+
+<h4>
+    ContentResult : controller daki bir actiona gelen istek sonucu geriye xml türünde veri döndürebiliriz.
+</h4>
+
+<a asp-action="XmlContentResult">Xml Content Result</a>

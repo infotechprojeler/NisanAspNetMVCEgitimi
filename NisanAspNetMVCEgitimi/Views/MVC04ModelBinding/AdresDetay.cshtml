@@ -1,0 +1,94 @@
+﻿@model Adres
+
+@{
+    ViewData["Title"] = "Adres Detay";
+}
+
+<h1>Adres Bilgileri</h1>
+
+@if (Model is not null)
+{
+    <table class="table table-striped">
+        <tr>
+            <td>Şehir</td>
+            <td>
+                @Model.Sehir
+            </td>
+        </tr>
+        <tr>
+            <td>Ilce</td>
+            <td>@Model.Ilce</td>
+        </tr>
+        <tr>
+            <td>Açık Adres</td>
+            <td>@Model.AcikAdres</td>
+        </tr>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">Adres Bilgisi Bulunamadı!</div>
+}
+
+<h3>Adres Düzenle (Klasik)</h3>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <table class="table table-striped">
+        <tr>
+            <td>Şehir</td>
+            <td>
+                @Html.EditorFor(model => model.Sehir)
+            </td>
+        </tr>
+        <tr>
+            <td>Ilce</td>
+            <td>@Html.EditorFor(model => model.Ilce)</td>
+        </tr>
+        <tr>
+            <td>Açık Adres</td>
+            <td>@Html.EditorFor(model => model.AcikAdres)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Kaydet" />
+            </td>
+        </tr>
+    </table>
+}
+
+<h3>Adres Düzenle (Yeni)</h3>
+
+<hr />
+
+<form asp-action="AdresDetay">
+    <table class="table table-striped">
+        <tr>
+            <td>Şehir</td>
+            <td>
+                <input asp-for="Sehir" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td>Ilce</td>
+            <td>
+                <input asp-for="Ilce" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td>Açık Adres</td>
+            <td>
+                <input asp-for="AcikAdres" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </td>
+        </tr>
+    </table>
+</form>

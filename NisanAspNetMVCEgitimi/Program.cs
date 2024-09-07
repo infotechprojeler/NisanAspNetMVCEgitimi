@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using NisanAspNetMVCEgitimi.Models;
+
 namespace NisanAspNetMVCEgitimi
 {
     public class Program
@@ -8,6 +11,9 @@ namespace NisanAspNetMVCEgitimi
 
             // Add services to the container.
             builder.Services.AddControllersWithViews(); // Mvc deki Controller ve Viewlarýn çalýþmasý için gerekli ayar
+
+            builder.Services.AddDbContext<UyeContext>(); // Projede entity framework kullanabilmek için gereki ayar
+            // builder.Services.AddDbContext<UyeContext>(option => option.UseInMemoryDatabase("UyeDb")); // Projede gerçek veritabaný yerine cihaz belleðinde çalýþan sanal db kullanmamýzý saðlar.
 
             var app = builder.Build(); // Yukardaki ayarlarla bir uygulama örneði oluþtur
 
