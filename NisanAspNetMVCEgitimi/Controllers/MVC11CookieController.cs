@@ -31,7 +31,29 @@ namespace NisanAspNetMVCEgitimi.Controllers
                 HttpContext.Response.Cookies.Append("userguid", Guid.NewGuid().ToString()); // userguid isminde 1 çerez daha oluştur ve içinde o kullanıcıya özel şifreli bir değer sakla
                 return RedirectToAction("CookieOku");
             }
+            else
+                TempData["Mesaj"] = @"<div class='alert alert-danger'>
+                    Giriş Başarısız!
+                </div>";
+            return View("Index");
+        }
+        public IActionResult CookieOku()
+        {
+            if (Request.Cookies["userguid"] is null) // controller tarafında cookie yi kontrol etme
+            {
+                TempData["Mesaj"] = @"<div class='alert alert-warning'>
+                    Giriş Engellendi! Lütfen Uygulamaya Giriş Yapınız!
+                </div>";
+                return RedirectToAction("Index");
+            }
             return View();
+        }
+        public IActionResult CookieSil()
+        {
+            Response.Cookies.Delete("kullaniciAdi");
+            Response.Cookies.Delete("sifre");
+            Response.Cookies.Delete("userguid");
+            return RedirectToAction("Index");
         }
     }
 }

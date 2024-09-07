@@ -14,6 +14,7 @@ namespace NisanAspNetMVCEgitimi
 
             builder.Services.AddDbContext<UyeContext>(); // Projede entity framework kullanabilmek için gereki ayar
             // builder.Services.AddDbContext<UyeContext>(option => option.UseInMemoryDatabase("UyeDb")); // Projede gerçek veritabaný yerine cihaz belleðinde çalýþan sanal db kullanmamýzý saðlar.
+            builder.Services.AddSession(); // Uygulamada session kullanabilmek için servis ekliyoruz.
 
             var app = builder.Build(); // Yukardaki ayarlarla bir uygulama örneði oluþtur
 
@@ -23,7 +24,7 @@ namespace NisanAspNetMVCEgitimi
                 app.UseExceptionHandler("/Home/Error"); // Oluþan hatalarý yakala ve uygulamayý /Home/Error adresine yönlendir. (Home:Controller, Error:Action)
             }
             app.UseStaticFiles(); // Uygulamada statik dosyalarý, yani css, js, resim dosyalarýný vb çalýþtýrmayý destekle
-
+            app.UseSession(); // Uygulamada session kullanýlabilsin.
             app.UseRouting(); // Uygulamada routing yapýsýný kullanarak controller ve action eþleþmelerini destekle
 
             app.UseAuthorization(); // Uygulamada yetkilendirmeyi aktif et

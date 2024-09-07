@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "MVC Session - Oturum Yönetimi";
+}
+<h1>MVC Session - Oturum Yönetimi</h1>
+
+<p>
+    Session sunucu taraflı oturum açma veya veri taşıma işlemleri için kullanılan bir yöntemdir.
+</p>
+
+<p class="alert alert-danger">
+    Dikkat! .Net core da session ı projede kullanabilmek için öncelikle program.cs de ayar yapmamız gerekiyor! Yoksa kullanılamıyor..
+</p>
+
+<h2>
+    Session Oluştur
+</h2>
+
+<form asp-action="SessionOlustur">
+    <input type="text" name="kullaniciAdi" placeholder="Kullanıcı Adı" />
+    <input type="text" name="sifre" placeholder="Şifre" />
+    <input type="submit" value="Giriş" />
+</form>
+
+<a asp-action="SessionOku">
+    Session Oku
+</a>
+
+@Html.Raw(TempData["Mesaj"])

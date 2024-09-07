@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Mvc Cookie (Çerez) Okuma";
+}
+<h1>Mvc Cookie (Çerez) Okuma</h1>
+
+<p>
+    Mvc de oluşturulan Cookie leri View larda Context.Request.Cookies["kullaniciAdi"] koduyla okuyabiliriz.
+</p>
+
+<h4>
+    username : @Context.Request.Cookies["kullaniciAdi"]
+</h4>
+
+<h4>
+    şifre : @Context.Request.Cookies["sifre"]
+</h4>
+
+<h4>
+    KullaniciGuid : @Context.Request.Cookies["userguid"]
+</h4>
+
+<a asp-action="Index">
+    Cookie Oluştur
+</a>
+<hr />
+<a asp-action="CookieSil">
+    Cookie Sil
+</a>
