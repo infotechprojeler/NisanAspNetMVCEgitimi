@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NisanAspNetMVCEgitimi.Models;
+using Microsoft.AspNetCore.Authentication.Cookies; // Microsoft Authentication yapýsýný kullanabilmek için gerekli kütüphane.
 
 namespace NisanAspNetMVCEgitimi
 {
@@ -15,6 +16,11 @@ namespace NisanAspNetMVCEgitimi
             builder.Services.AddDbContext<UyeContext>(); // Projede entity framework kullanabilmek için gereki ayar
             // builder.Services.AddDbContext<UyeContext>(option => option.UseInMemoryDatabase("UyeDb")); // Projede gerçek veritabaný yerine cihaz belleðinde çalýþan sanal db kullanmamýzý saðlar.
             builder.Services.AddSession(); // Uygulamada session kullanabilmek için servis ekliyoruz.
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+            {
+                x.LoginPath = "/MVC15FiltersUsing/Login"; // oturum açmayan kullanýcýlara varsayýlan account/login adresi yerine kendi istedigimiz login sayfasina bu sekilde yonlendiriyoruz
+            }); // Oturum iþlemleri servisi
 
             var app = builder.Build(); // Yukardaki ayarlarla bir uygulama örneði oluþtur
 

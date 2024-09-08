@@ -1,0 +1,48 @@
+﻿@using NisanAspNetMVCEgitimi.Extensions;
+
+@{
+    ViewBag.Title = "MVC15 Filters Using";
+    var uye = Context.Session.GetJson<Uye>("uye");
+}
+
+<h2>Filtre Kullanimi</h2>
+
+<p>Bu ekrana filtredeki gibi oturum açılırsa erişilebilir.</p>
+@if (Context.Session.GetInt32("IsLoggedIn") == 1) // Kullanıcı girişi yapıldığında oluşturduğumuz IsLoggedIn isimli session ı kontrol et. Değeri 1 ise.
+{
+    <h3>
+        Hoşgeldin : @Context.Session.GetString("kullanici")
+    </h3>
+    <h3>
+        Guid: @Context.Session.GetString("userguid")
+    </h3>
+    
+    if (uye is not null)
+    {
+        <table class="table">
+            <tr>
+                <td>Ad Soyad</td>
+                <td>@uye.Ad @uye.Soyad</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@uye.Email</td>
+            </tr>
+            <tr>
+                <td>TC Kimlik No</td>
+                <td>@uye.TcKimlikNo</td>
+            </tr>
+            <tr>
+                <td>Telefon</td>
+                <td>@uye.Telefon</td>
+            </tr>
+            <tr>
+                <td>Doğum Tarihi</td>
+                <td>@uye.DogumTarihi</td>
+            </tr>
+        </table>
+    }
+    <form asp-controller="MVC12Session" asp-action="SessionSil">
+        <input type="submit" value="Oturumu Kapat" class="btn btn-danger" />
+    </form>
+}
