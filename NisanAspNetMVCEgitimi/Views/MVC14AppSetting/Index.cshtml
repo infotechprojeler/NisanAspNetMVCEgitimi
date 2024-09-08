@@ -1,4 +1,25 @@
-﻿
-@{
-
+﻿@{
+    ViewBag.Title = "MVC14 App Setting";
 }
+
+<h2>MVC14 App Setting</h2>
+
+<p>
+    Mvc ile web config dosyasına yazacağımız özel verilere erişip uygulama içerisinde kullanabiliriz.
+</p>
+
+<p class="alert alert-info">
+    <b>MailinGidecegiAdres :</b> @ViewBag.MailinGidecegiAdres
+</p>
+
+<p class="alert alert-info">
+    <b>Mail Sunucusu :</b> @ViewBag.MailSunucu
+</p>
+
+<p class="alert alert-danger">
+    <b>KullaniciAdi :</b> @ViewBag.KullaniciAdi
+</p>
+
+<p class="alert alert-primary">
+    <b>Sifre :</b> @ViewBag.Sifre
+</p>

@@ -12,6 +12,11 @@ namespace NisanAspNetMVCEgitimi.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.MailinGidecegiAdres = _configuration["Email"];
+            ViewBag.MailSunucu = _configuration["MailSunucu"];
+            ViewBag.KullaniciAdi = _configuration["MailKullanici:Username"]; // iç içe verilere ulaşma yöntemi
+            // ViewBag.Sifre = _configuration["MailKullanici:Password"]; // 1.yöntem
+            ViewBag.Sifre = _configuration.GetSection("MailKullanici:Password").Value; // 2. yöntem
             return View();
         }
     }
