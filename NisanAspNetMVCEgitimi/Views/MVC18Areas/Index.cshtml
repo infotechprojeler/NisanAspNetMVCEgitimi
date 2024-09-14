@@ -21,6 +21,26 @@
     Projeye Sağ Tık > Açılan menüden Add > New scaffolded item.. > (Vscode da projeye new folder > Areas adında Admin isminde klasör ekle) Admin klasörü altına Controllers, Models ve Views klasörlerini ekle.
 </p>
 
+<h3>Area Ayarını Ekleme</h3>
+
+<p class="alert alert-info">
+    Area yı ekledikten sonra Program.cs ye buradaki gibi Routing ayarını ekliyoruz.
+
+    <code>
+        app.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}");
+    </code>
+</p>
+
 <h4>Admin Area Örneği</h4>
 
 <a href="/Admin">Admin Paneline Git</a>
+
+<p>Dikkat!
+    <br />
+    Area altındaki ekranlar direk çalışmaz!
+    Çalışması için Area altındaki controller lara hangi Area altında çalışıyorsa Attribute olarak onu eklememiz gerekli.
+    <br />
+    Bkz. Area > Admin > Main controller.
+</p>
