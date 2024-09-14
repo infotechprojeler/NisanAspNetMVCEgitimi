@@ -35,6 +35,11 @@ namespace NisanAspNetMVCEgitimi
 
             app.UseAuthorization(); // Uygulamada yetkilendirmeyi aktif et
 
+            // Admin paneli areasýnýn çalýþmasý için gerekli routing yapýsýný ekliyoruz.
+            app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}");
+
             app.MapControllerRoute( // Uygulamada varsayýlan Route yapýlandýrmasýný aktif et
                 name: "default", // adý default olsun
                 pattern: "{controller=Home}/{action=Index}/{id?}"); // Uygulamaya controller ve action belirtilmeden gelinirse varsayýlan olarak Home controller daki Index isimli action ý çalýþtýr. Burada id? parametresi ? ile parametrik olarak ifade edilmiþtir. Yani gelmeyedebilir.

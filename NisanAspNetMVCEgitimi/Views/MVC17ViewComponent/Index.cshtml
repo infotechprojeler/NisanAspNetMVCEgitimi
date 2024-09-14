@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "View Component Kullanımı";
+}
+
+<h1>
+    @ViewData["Title"]
+</h1>
+
+<p>
+    Asp.Net core da herhangi bir controller a bağlı olmadan kendi kendine çalışabilen modüler yapıdır.
+</p>
+
+<p>
+    Bu yapıyı kullanmak için projemize ViewComponents adında bir klasör ekliyoruz.
+</p>
+
+<p>
+    Sonrasında ViewComponents klasörüne projede lazım olan class ı ekliyoruz (uyeler.cs)
+</p>
+
+<p class="alert alert-info">
+    Projeye ekleyeceğimiz Components klasörünü istersek MVC17ViewComponent altına istersek de shared klasörüne ekleyebiliriz.
+</p>
+
+<p>
+    Eklediğimiz bu class ı viewcomponent haline getirmek için ViewComponent sınıfından miras alıyoruz ve classta yazılı olan ayarları ekliyoruz.
+</p>
+
+<p>
+    Views > MVC17ViewComponent klasörüne Components klasörünü ekliyoruz.
+    <br />
+    Bu klasöre de açtığımız class la aynı isimde bir klasör açıp içine Default isminde (Eklenecek view adının Default olması gerekli!) bir view ekliyoruz (Ekran içerisinde üye listesi tasarımı yaptık, projemizde ne göstermek istersek onu eklemeliyiz).
+</p>
+
+<h3>
+    Eklediğimiz Komponenti Kullanma:
+</h3>
+
+<p class="alert alert-light">
+    <code>@@await Component.InvokeAsync("Uyeler")</code> metodu ile komponenti kullanmak istediğimiz ekranda çağırıyoruz
+</p>
+
+@await Component.InvokeAsync("Uyeler")
