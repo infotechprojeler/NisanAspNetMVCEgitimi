@@ -32,11 +32,16 @@
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Kullanicilar" asp-action="Index">Kullanıcı Yönetimi</a>
                         </li>
                     </ul>
+
+                    <form asp-action="Logout" class="text-end me-5">
+                        <input type="submit" value="Oturumu Kapat" class="btn btn-danger" />
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
+        @Html.Raw(TempData["Mesaj"])
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

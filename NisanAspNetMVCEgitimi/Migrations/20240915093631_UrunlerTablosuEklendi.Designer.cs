@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NisanAspNetMVCEgitimi.Models;
 
@@ -11,9 +12,11 @@ using NisanAspNetMVCEgitimi.Models;
 namespace NisanAspNetMVCEgitimi.Migrations
 {
     [DbContext(typeof(UyeContext))]
-    partial class UyeContextModelSnapshot : ModelSnapshot
+    [Migration("20240915093631_UrunlerTablosuEklendi")]
+    partial class UrunlerTablosuEklendi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

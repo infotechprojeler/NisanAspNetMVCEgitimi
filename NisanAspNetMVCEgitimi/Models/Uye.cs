@@ -27,6 +27,7 @@ namespace NisanAspNetMVCEgitimi.Models
         [StringLength(15, ErrorMessage = "{0} {2} Karakterden Az Olamaz!", MinimumLength = 5)]
         [Compare("Sifre")] // Sifre property si ile karşılaştır
         public string? SifreTekrar { get; set; }
+        [Required(ErrorMessage = "{0} alanı boş geçilemez!")]
         [Display(Name = "Doğum Tarihi")]
         public DateTime? DogumTarihi { get; set; }
     }
