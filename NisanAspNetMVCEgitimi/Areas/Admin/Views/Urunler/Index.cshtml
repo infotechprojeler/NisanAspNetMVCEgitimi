@@ -6,9 +6,13 @@
 
 <h1>Ürünler</h1>
 
-<p>
+<div>
     <a asp-action="Create" class="btn btn-outline-primary">Yeni Ekle</a>
-</p>
+    <form class="d-flex">
+        <input type="search" name="q" placeholder="Ara" class="form-control w-25 me-2" />
+        <input type="submit" value="Ara" class="btn btn-outline-secondary" />
+    </form>
+</div>
 <table class="table table-striped table-hover">
     <thead>
         <tr>

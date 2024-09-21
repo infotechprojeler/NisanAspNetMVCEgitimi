@@ -1,0 +1,52 @@
+﻿@model Urun
+
+@{
+    ViewData["Title"] = "Ürün Düzenle";
+}
+
+<h1>Ürün Düzenle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Resmi" />
+            <div class="form-group">
+                <label asp-for="Adi" class="control-label"></label>
+                <input asp-for="Adi" class="form-control" />
+                <span asp-validation-for="Adi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resmi" class="control-label"></label>
+                <input asp-for="Resmi" class="form-control" type="file" />
+                <span asp-validation-for="Resmi" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyati" class="control-label"></label>
+                <input asp-for="Fiyati" class="form-control" />
+                <span asp-validation-for="Fiyati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stok" class="control-label"></label>
+                <input asp-for="Stok" class="form-control" />
+                <span asp-validation-for="Stok" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group mt-5">
+            <img src="/images/@Model.Resmi" alt="" height="99" />
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Dön</a>
+</div>
+
