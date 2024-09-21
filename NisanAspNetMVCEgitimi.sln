@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NisanAspNetMVCEgitimi", "NisanAspNetMVCEgitimi\NisanAspNetMVCEgitimi.csproj", "{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NisanAspNetMVCEgitimi", "NisanAspNetMVCEgitimi\NisanAspNetMVCEgitimi.csproj", "{4D46DFEF-6D13-4FDF-AD75-3CA9E265B482}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetFrameworkMVC", "AspNetFrameworkMVC\AspNetFrameworkMVC.csproj", "{58390FF2-5DEE-4562-BE09-1F34FB603F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NisanWebAPI", "NisanWebAPI\NisanWebAPI.csproj", "{6BDFB050-5CB9-4B45-BBF4-A5C1BAE8D96E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58390FF2-5DEE-4562-BE09-1F34FB603F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BDFB050-5CB9-4B45-BBF4-A5C1BAE8D96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BDFB050-5CB9-4B45-BBF4-A5C1BAE8D96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BDFB050-5CB9-4B45-BBF4-A5C1BAE8D96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BDFB050-5CB9-4B45-BBF4-A5C1BAE8D96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,6 @@
+@NisanWebAPI_HostAddress = http://localhost:5132
+
+GET {{NisanWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
