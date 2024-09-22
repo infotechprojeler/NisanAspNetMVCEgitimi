@@ -32,20 +32,33 @@ namespace NisanWebAPI.Controllers
 
         // POST api/<UrunlerController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public int Post([FromBody] Urun value)
         {
+            _context.Urunler.Add(value);
+            int sonuc = _context.SaveChanges();
+            return sonuc;
         }
 
         // PUT api/<UrunlerController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public int Put(int id, [FromBody] Urun value)
         {
+            _context.Urunler.Update(value);
+            int sonuc = _context.SaveChanges();
+            return sonuc;
         }
 
         // DELETE api/<UrunlerController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public int Delete(int id)
         {
+            var kayit = _context.Urunler.Find(id);
+            if (kayit != null)
+            {
+                _context.Remove(kayit);
+            }
+            int sonuc = _context.SaveChanges();
+            return sonuc;
         }
     }
 }
